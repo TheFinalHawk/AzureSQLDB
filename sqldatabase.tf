@@ -34,8 +34,8 @@ resource "azurerm_mssql_database" "appdb" {
 resource "azurerm_mssql_firewall_rule" "allowmyclient" {
   name             = "AllowClientIP"
   server_id        = azurerm_mssql_server.sqlserver.id
-  start_ip_address = "108.35.113.184" #fake ip for security purposes
-  end_ip_address   = "108.35.113.184"
+  start_ip_address = "10.10.10.10" #fake ip for security purposes
+  end_ip_address   = "10.10.10.10"
   depends_on = [
     azurerm_mssql_server.sqlserver
   ]
